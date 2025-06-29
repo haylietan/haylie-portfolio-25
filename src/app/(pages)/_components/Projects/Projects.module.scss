@@ -1,0 +1,170 @@
+.container {
+  padding: 8% 5%;
+  width: 100%;
+  max-height: 80%;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2%;
+  color: white;
+}
+
+.featuredGrid {
+  display: flex;
+  gap: 1rem;
+}
+
+.featuredCard {
+  flex: 1;
+  height: 200px;
+  border-radius: 0.75rem;
+  background: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.featuredImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+}
+
+.featuredImage {
+  border-radius: 0.75rem 0.75rem 0 0;
+}
+
+.pinned {
+  border: 2px solid #444;
+}
+
+.cardFooter {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  background: black;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+}
+
+.pinButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+}
+
+/* Scrollable mini grid */
+.gridScroll {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 1rem;
+  overflow-x: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.gridItem {
+  background: white;
+  border-radius: 0.75rem;
+  height: 180px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.projectPreview {
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Meta Info */
+.projectMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: left;
+}
+
+.projectTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tags span {
+  background: #e5e7eb;
+  color: #111;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+
+/* Shared hover effect */
+.featuredCard:hover,
+.gridItem:hover {
+  transform: scale(1.02);
+}
+
+/* GitHub overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  z-index: 2;
+  text-decoration: none;
+}
+
+.featuredCard:hover .overlay,
+.gridItem:hover .overlay {
+  opacity: 1;
+}
+
+.githubIcon {
+  color: white;
+  font-size: 2rem;
+  transition: transform 0.2s ease;
+}
+
+.githubIcon:hover {
+  transform: scale(1.1);
+}
